@@ -44,7 +44,7 @@ class PlantsController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_plant
-    @plant = Plant.find(params[:id])
+    @plant = current_user.plants.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
