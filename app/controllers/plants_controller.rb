@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlantsController < OpenReadController
-  before_action :set_plant, only: %i[show update destroy]
+  before_action :set_plant, only: %i[update destroy]
 
   # GET /plants
   def index
@@ -12,7 +12,7 @@ class PlantsController < OpenReadController
 
   # GET /plants/1
   def show
-    render json: @plant
+    render json: Plant.find(params[:id])
   end
 
   # POST /plants
